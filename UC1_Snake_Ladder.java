@@ -5,7 +5,7 @@ public class UC1_Snake_Ladder {
 	public static void main(String[] args) {
 		System.out.println("Snake And ladder Game using Single Player");
 		System.out.println("Game Starts Here !! (: ");
-		int counter = 0, position = 0;
+		int counter = 0, position = 0, dice = 0;
 		while (counter <= 100 || counter > 100) {
 			if (counter > 100) {
 				counter = counter - position;
@@ -13,7 +13,7 @@ public class UC1_Snake_Ladder {
 			else if (counter == 100) {
 					System.out.println("** Wooo! Player Wins! **");
 					break;
-				}
+			}
 			int Rolling = (int)Math.floor(Math.random() * 10 ) % 6 + 1;
 			int randomPlayer = (int)Math.floor(Math.random() * 10 ) % 3;
 
@@ -32,6 +32,10 @@ public class UC1_Snake_Ladder {
 			System.out.println("Current Count of Player is " + counter);
 			counter = position+counter;
 			System.out.println("----------------------------");
-		}
+			dice = (int) (dice + position);
+			System.out.println("Number of dice Played " + dice);
+			System.out.println("----------------------------");
+		
+		}	
 	}
 }
