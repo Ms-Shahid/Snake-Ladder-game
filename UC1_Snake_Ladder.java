@@ -3,13 +3,15 @@ package day_4_pratice_problems.snakeLadder;
 public class UC1_Snake_Ladder {
 
 	public static void main(String[] args) {
+		
 		System.out.println("Snake And ladder Game using Single Player");
 		System.out.println("Game Starts Here !! (: ");
+		
 		int counter = 0, position = 0;
-		
-		int Rolling = (int) Math.floor(Math.random() * 10 ) % 6 + 1;
+		while (counter <= 100) {
+		int Rolling = (int)Math.floor(Math.random() * 10 ) % 6 + 1;
 		int randomPlayer = (int)Math.floor(Math.random() * 10 ) % 3;
-		
+
 		switch(randomPlayer) {
 		case 0: System.out.println("No Play ");position = 0;break;
 		case 1: System.out.println("Moving Ahead");position = (int) (position + Rolling);break;
@@ -22,8 +24,16 @@ public class UC1_Snake_Ladder {
 				position = 0;
 			}break;
 		}
-		counter = position+counter;
 		System.out.println("Current Count of Player is " + counter);
+		counter = position+counter;
 		System.out.println("----------------------------");
+		if (counter == 100) {
+			System.out.println("Player Wins!!!");
+			break;
+			}
 		}
+		
+		
+	}
+
 }
